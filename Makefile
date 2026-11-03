@@ -30,6 +30,7 @@ protos := \
 	proto/spire/api/types/status.proto \
 	proto/spire/api/types/x509svid.proto \
 	proto/spire/api/types/witsvid.proto \
+	proto/spire/api/types/credentialacquisition.proto \
 
 
 apiprotos := \
@@ -38,6 +39,7 @@ apiprotos := \
 	proto/spire/api/agent/logger/v1/logger.proto \
 	proto/spire/api/server/agent/v1/agent.proto \
 	proto/spire/api/server/bundle/v1/bundle.proto \
+	proto/spire/api/server/credentialacquisition/v1/credentialacquisition.proto \
 	proto/spire/api/server/debug/v1/debug.proto \
 	proto/spire/api/server/entry/v1/entry.proto \
 	proto/spire/api/server/localauthority/v1/localauthority.proto \
