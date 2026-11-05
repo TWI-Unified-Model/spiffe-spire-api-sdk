@@ -217,7 +217,7 @@ func (CredentialType) EnumDescriptor() ([]byte, []int) {
 	return file_spire_api_types_credentialacquisition_proto_rawDescGZIP(), []int{2}
 }
 
-// EvidenceBinding declares how the credential key is bound to the Evidence
+// EvidenceBinding declares how the Attester-held key is bound to the Evidence
 // (TACRA, Binding Credential Keys to Evidence).
 type EvidenceBinding struct {
 	state protoimpl.MessageState `protogen:"open.v1"`

@@ -33,7 +33,7 @@ const (
 // Agent, the Credential Acquisition System Client, forwards the three calls
 // of a Workload it attested: the Server issues the Freshness Handle,
 // appraises the Evidence of the Workload through its Verifier, checks the binding
-// of the credential key to that Evidence, and, as the Credential Authority,
+// of the Attester-held key to that Evidence, and, as the Credential Authority,
 // mints an X509-SVID for the registration entry, or, as the conduit to the
 // Secret Vault, returns the released credential sealed to the key of the Workload.
 //
@@ -103,7 +103,7 @@ func (c *credentialAcquisitionClient) RetrieveCredential(ctx context.Context, in
 // Agent, the Credential Acquisition System Client, forwards the three calls
 // of a Workload it attested: the Server issues the Freshness Handle,
 // appraises the Evidence of the Workload through its Verifier, checks the binding
-// of the credential key to that Evidence, and, as the Credential Authority,
+// of the Attester-held key to that Evidence, and, as the Credential Authority,
 // mints an X509-SVID for the registration entry, or, as the conduit to the
 // Secret Vault, returns the released credential sealed to the key of the Workload.
 //
