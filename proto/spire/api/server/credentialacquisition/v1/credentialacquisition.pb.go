@@ -27,7 +27,7 @@ type InitiateCredentialAcquisitionRequest struct {
 	// Required. The ID of the registration entry of the Workload the Agent
 	// attested, whose credential is acquired.
 	EntryId string `protobuf:"bytes,1,opt,name=entry_id,json=entryId,proto3" json:"entry_id,omitempty"`
-	// Required. The Target: the octet string that names the relying party
+	// Required. The Target: the octet string that names the Relying Party
 	// the credential is for.
 	Target string `protobuf:"bytes,2,opt,name=target,proto3" json:"target,omitempty"`
 	// Optional. The Credential Type the Workload plans to use with the
@@ -99,7 +99,7 @@ func (x *InitiateCredentialAcquisitionRequest) GetCredentialHint() string {
 
 type InitiateCredentialAcquisitionResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Required. The mode in which the Target's credential is acquired.
+	// Required. The mode in which the credential of the Target is acquired.
 	Mode types.CredentialAcquisitionMode `protobuf:"varint,1,opt,name=mode,proto3,enum=spire.api.types.CredentialAcquisitionMode" json:"mode,omitempty"`
 	// Required. The Freshness Kind of this exchange.
 	FreshnessKind types.FreshnessKind `protobuf:"varint,2,opt,name=freshness_kind,json=freshnessKind,proto3,enum=spire.api.types.FreshnessKind" json:"freshness_kind,omitempty"`
@@ -113,8 +113,8 @@ type InitiateCredentialAcquisitionResponse struct {
 	// Evidence the Verifier accepts.
 	MaxAge uint32 `protobuf:"varint,5,opt,name=max_age,json=maxAge,proto3" json:"max_age,omitempty"`
 	// The signature algorithms the Credential Authority accepts for the
-	// Credential Signing Key, as tokens of the TACRA EST profile, for
-	// example ecdsa-p256-sha256. Required when mode is enroll.
+	// Credential Signing Key, by name, for example ecdsa-p256-sha256.
+	// Required when mode is enroll.
 	AcceptableCsk []string `protobuf:"bytes,6,rep,name=acceptable_csk,json=acceptableCsk,proto3" json:"acceptable_csk,omitempty"`
 	// The HPKE suites the Secret Vault seals to, each named by its KEM, KDF
 	// and AEAD joined with +. Required when mode is retrieve.
@@ -228,7 +228,7 @@ type EnrollCredentialRequest struct {
 	FreshnessKind types.FreshnessKind `protobuf:"varint,5,opt,name=freshness_kind,json=freshnessKind,proto3,enum=spire.api.types.FreshnessKind" json:"freshness_kind,omitempty"`
 	// The freshness element the Evidence binds: the Freshness Handle for
 	// present-nonce and present-epoch, the epoch marker the Workload holds
-	// for absent-epoch, the Workload's 8-octet timestamp for
+	// for absent-epoch, the 8-octet timestamp of the Workload for
 	// absent-timestamp, absent for absent-none.
 	FreshnessElement []byte `protobuf:"bytes,6,opt,name=freshness_element,json=freshnessElement,proto3" json:"freshness_element,omitempty"`
 	// Required. ASN.1 DER encoded PKCS#10 CSR, signed by the Credential
@@ -238,7 +238,7 @@ type EnrollCredentialRequest struct {
 	// Required. The Evidence, bound to the CSR, the Target and the freshness
 	// element as binding declares.
 	Evidence []byte `protobuf:"bytes,8,opt,name=evidence,proto3" json:"evidence,omitempty"`
-	// Optional. The media type of evidence.
+	// Optional. The media type of the Evidence.
 	EvidenceProfile string `protobuf:"bytes,9,opt,name=evidence_profile,json=evidenceProfile,proto3" json:"evidence_profile,omitempty"`
 	// Required. How the Evidence binds the CSR.
 	Binding       *types.EvidenceBinding `protobuf:"bytes,10,opt,name=binding,proto3" json:"binding,omitempty"`
@@ -413,7 +413,7 @@ type RetrieveCredentialRequest struct {
 	// Required. The Evidence, bound to cek_pub, the Target and the freshness
 	// element as binding declares.
 	Evidence []byte `protobuf:"bytes,8,opt,name=evidence,proto3" json:"evidence,omitempty"`
-	// Optional. The media type of evidence.
+	// Optional. The media type of the Evidence.
 	EvidenceProfile string `protobuf:"bytes,9,opt,name=evidence_profile,json=evidenceProfile,proto3" json:"evidence_profile,omitempty"`
 	// Required. How the Evidence binds cek_pub.
 	Binding       *types.EvidenceBinding `protobuf:"bytes,10,opt,name=binding,proto3" json:"binding,omitempty"`
@@ -524,7 +524,7 @@ func (x *RetrieveCredentialRequest) GetBinding() *types.EvidenceBinding {
 type RetrieveCredentialResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The encrypted credential bundle of TACRA (Sealing the
-	// Released Credential), opaque to the Server and the agent.
+	// Released Credential), opaque to the Server and the Agent.
 	EncryptedCredentialBundle []byte `protobuf:"bytes,1,opt,name=encrypted_credential_bundle,json=encryptedCredentialBundle,proto3" json:"encrypted_credential_bundle,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache

@@ -88,7 +88,7 @@ func (FreshnessKind) EnumDescriptor() ([]byte, []int) {
 	return file_spire_api_types_credentialacquisition_proto_rawDescGZIP(), []int{0}
 }
 
-// CredentialAcquisitionMode is the mode in which a Target's credential is
+// CredentialAcquisitionMode is the mode in which the credential of a Target is
 // acquired (TACRA, Credential Acquisition Mode).
 type CredentialAcquisitionMode int32
 
