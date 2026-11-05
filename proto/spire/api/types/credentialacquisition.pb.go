@@ -149,19 +149,19 @@ type CredentialType int32
 
 const (
 	CredentialType_CREDENTIAL_TYPE_UNSPECIFIED CredentialType = 0
-	// An X.509 certificate (token x509). Enrollment mints an X509-SVID.
+	// An X.509 certificate (x509). Enrollment mints an X509-SVID.
 	CredentialType_CREDENTIAL_TYPE_X509 CredentialType = 1
-	// A WIMSE Workload Identity Certificate (token wic).
+	// A WIMSE Workload Identity Certificate (wic).
 	CredentialType_CREDENTIAL_TYPE_WIC CredentialType = 2
-	// A WIMSE Workload Identity Token (token wit). Retrieval only.
+	// A WIMSE Workload Identity Token (wit). Retrieval only.
 	CredentialType_CREDENTIAL_TYPE_WIT CredentialType = 3
-	// A JSON Web Token used as a bearer token (token jwt). Retrieval only.
+	// A JSON Web Token used as a bearer token (jwt). Retrieval only.
 	CredentialType_CREDENTIAL_TYPE_JWT CredentialType = 4
-	// An API key (token api-key). Retrieval only.
+	// An API key (api-key). Retrieval only.
 	CredentialType_CREDENTIAL_TYPE_API_KEY CredentialType = 5
-	// A pre-shared symmetric key (token psk). Retrieval only.
+	// A pre-shared symmetric key (psk). Retrieval only.
 	CredentialType_CREDENTIAL_TYPE_PSK CredentialType = 6
-	// A private key shared by the instances of a replicated service (token
+	// A private key shared by the instances of a replicated service (
 	// private-key). Retrieval only.
 	CredentialType_CREDENTIAL_TYPE_PRIVATE_KEY CredentialType = 7
 )
