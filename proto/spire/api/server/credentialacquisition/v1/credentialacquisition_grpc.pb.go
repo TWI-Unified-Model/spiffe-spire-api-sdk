@@ -30,14 +30,14 @@ const (
 //
 // The CredentialAcquisition service is the Credential Acquisition System
 // Server of draft-novak-rats-tacra (TACRA) behind the Workload API. An
-// agent, the Credential Acquisition System Client, forwards the three calls
-// of a workload it attested: the server issues the Freshness Handle,
-// appraises the workload's Evidence through its Verifier, checks the binding
+// Agent, the Credential Acquisition System Client, forwards the three calls
+// of a Workload it attested: the Server issues the Freshness Handle,
+// appraises the Workload's Evidence through its Verifier, checks the binding
 // of the credential key to that Evidence, and, as the Credential Authority,
 // mints an X509-SVID for the registration entry, or, as the conduit to the
-// Secret Vault, returns the released credential sealed to the workload's key.
+// Secret Vault, returns the released credential sealed to the Workload's key.
 //
-// The caller must present an active agent X509-SVID that is authorized for
+// The caller must present an active Agent X509-SVID that is authorized for
 // the registration entry named in the request. See the Entry
 // GetAuthorizedEntries RPC.
 type CredentialAcquisitionClient interface {
@@ -100,14 +100,14 @@ func (c *credentialAcquisitionClient) RetrieveCredential(ctx context.Context, in
 //
 // The CredentialAcquisition service is the Credential Acquisition System
 // Server of draft-novak-rats-tacra (TACRA) behind the Workload API. An
-// agent, the Credential Acquisition System Client, forwards the three calls
-// of a workload it attested: the server issues the Freshness Handle,
-// appraises the workload's Evidence through its Verifier, checks the binding
+// Agent, the Credential Acquisition System Client, forwards the three calls
+// of a Workload it attested: the Server issues the Freshness Handle,
+// appraises the Workload's Evidence through its Verifier, checks the binding
 // of the credential key to that Evidence, and, as the Credential Authority,
 // mints an X509-SVID for the registration entry, or, as the conduit to the
-// Secret Vault, returns the released credential sealed to the workload's key.
+// Secret Vault, returns the released credential sealed to the Workload's key.
 //
-// The caller must present an active agent X509-SVID that is authorized for
+// The caller must present an active Agent X509-SVID that is authorized for
 // the registration entry named in the request. See the Entry
 // GetAuthorizedEntries RPC.
 type CredentialAcquisitionServer interface {

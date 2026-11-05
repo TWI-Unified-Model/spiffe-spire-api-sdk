@@ -24,13 +24,13 @@ const (
 
 type InitiateCredentialAcquisitionRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Required. The ID of the registration entry of the workload the agent
+	// Required. The ID of the registration entry of the Workload the Agent
 	// attested, whose credential is acquired.
 	EntryId string `protobuf:"bytes,1,opt,name=entry_id,json=entryId,proto3" json:"entry_id,omitempty"`
 	// Required. The Target: the octet string that names the relying party
 	// the credential is for.
 	Target string `protobuf:"bytes,2,opt,name=target,proto3" json:"target,omitempty"`
-	// Optional. The Credential Type the workload plans to use with the
+	// Optional. The Credential Type the Workload plans to use with the
 	// Target.
 	CredentialType types.CredentialType `protobuf:"varint,3,opt,name=credential_type,json=credentialType,proto3,enum=spire.api.types.CredentialType" json:"credential_type,omitempty"`
 	// Optional. The Credential Hint.
@@ -227,12 +227,12 @@ type EnrollCredentialRequest struct {
 	// returned.
 	FreshnessKind types.FreshnessKind `protobuf:"varint,5,opt,name=freshness_kind,json=freshnessKind,proto3,enum=spire.api.types.FreshnessKind" json:"freshness_kind,omitempty"`
 	// The freshness element the Evidence binds: the Freshness Handle for
-	// present-nonce and present-epoch, the epoch marker the workload holds
-	// for absent-epoch, the workload's 8-octet timestamp for
+	// present-nonce and present-epoch, the epoch marker the Workload holds
+	// for absent-epoch, the Workload's 8-octet timestamp for
 	// absent-timestamp, absent for absent-none.
 	FreshnessElement []byte `protobuf:"bytes,6,opt,name=freshness_element,json=freshnessElement,proto3" json:"freshness_element,omitempty"`
 	// Required. ASN.1 DER encoded PKCS#10 CSR, signed by the Credential
-	// Signing Key the workload generated. The CSR conveys the public key;
+	// Signing Key the Workload generated. The CSR conveys the public key;
 	// the SPIFFE ID comes from the registration entry.
 	Csr []byte `protobuf:"bytes,7,opt,name=csr,proto3" json:"csr,omitempty"`
 	// Required. The Evidence, bound to the CSR, the Target and the freshness
@@ -524,7 +524,7 @@ func (x *RetrieveCredentialRequest) GetBinding() *types.EvidenceBinding {
 type RetrieveCredentialResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Required. The encrypted credential bundle of TACRA (Sealing the
-	// Released Credential), opaque to the server and the agent.
+	// Released Credential), opaque to the Server and the agent.
 	EncryptedCredentialBundle []byte `protobuf:"bytes,1,opt,name=encrypted_credential_bundle,json=encryptedCredentialBundle,proto3" json:"encrypted_credential_bundle,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache

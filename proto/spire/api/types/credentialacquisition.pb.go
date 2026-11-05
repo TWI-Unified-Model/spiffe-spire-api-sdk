@@ -23,7 +23,7 @@ const (
 
 // FreshnessKind classifies the freshness of Evidence in one credential
 // acquisition exchange (TACRA, Freshness Kind). The present kinds carry a
-// Freshness Handle the workload embeds in its Evidence; the absent kinds
+// Freshness Handle the Workload embeds in its Evidence; the absent kinds
 // carry none.
 type FreshnessKind int32
 
@@ -31,9 +31,9 @@ const (
 	FreshnessKind_FRESHNESS_KIND_UNSPECIFIED FreshnessKind = 0
 	// No freshness claim.
 	FreshnessKind_FRESHNESS_KIND_ABSENT_NONE FreshnessKind = 1
-	// The workload stamps its Evidence with its own timestamp.
+	// The Workload stamps its Evidence with its own timestamp.
 	FreshnessKind_FRESHNESS_KIND_ABSENT_TIMESTAMP FreshnessKind = 2
-	// The workload embeds an epoch marker it already holds.
+	// The Workload embeds an epoch marker it already holds.
 	FreshnessKind_FRESHNESS_KIND_ABSENT_EPOCH FreshnessKind = 3
 	// The Freshness Handle is a single-use nonce.
 	FreshnessKind_FRESHNESS_KIND_PRESENT_NONCE FreshnessKind = 4
@@ -95,10 +95,10 @@ type CredentialAcquisitionMode int32
 const (
 	CredentialAcquisitionMode_CREDENTIAL_ACQUISITION_MODE_UNSPECIFIED CredentialAcquisitionMode = 0
 	// Enrollment: a new proof-of-possession credential is minted for a key
-	// the workload generated.
+	// the Workload generated.
 	CredentialAcquisitionMode_CREDENTIAL_ACQUISITION_MODE_ENROLL CredentialAcquisitionMode = 1
 	// Retrieval: a pre-existing credential is released, sealed to a key the
-	// workload generated.
+	// Workload generated.
 	CredentialAcquisitionMode_CREDENTIAL_ACQUISITION_MODE_RETRIEVE CredentialAcquisitionMode = 2
 )
 
