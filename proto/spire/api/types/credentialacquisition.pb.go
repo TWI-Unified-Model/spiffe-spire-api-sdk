@@ -144,7 +144,7 @@ func (CredentialAcquisitionMode) EnumDescriptor() ([]byte, []int) {
 }
 
 // CredentialType names the kind of credential acquired (TACRA, Credential
-// Type token).
+// Type Identifier).
 type CredentialType int32
 
 const (
@@ -161,9 +161,6 @@ const (
 	CredentialType_CREDENTIAL_TYPE_API_KEY CredentialType = 5
 	// A pre-shared symmetric key (psk). Retrieval only.
 	CredentialType_CREDENTIAL_TYPE_PSK CredentialType = 6
-	// A private key shared by the instances of a replicated service (
-	// private-key). Retrieval only.
-	CredentialType_CREDENTIAL_TYPE_PRIVATE_KEY CredentialType = 7
 )
 
 // Enum value maps for CredentialType.
@@ -176,7 +173,6 @@ var (
 		4: "CREDENTIAL_TYPE_JWT",
 		5: "CREDENTIAL_TYPE_API_KEY",
 		6: "CREDENTIAL_TYPE_PSK",
-		7: "CREDENTIAL_TYPE_PRIVATE_KEY",
 	}
 	CredentialType_value = map[string]int32{
 		"CREDENTIAL_TYPE_UNSPECIFIED": 0,
@@ -186,7 +182,6 @@ var (
 		"CREDENTIAL_TYPE_JWT":         4,
 		"CREDENTIAL_TYPE_API_KEY":     5,
 		"CREDENTIAL_TYPE_PSK":         6,
-		"CREDENTIAL_TYPE_PRIVATE_KEY": 7,
 	}
 )
 
@@ -294,7 +289,7 @@ const file_spire_api_types_credentialacquisition_proto_rawDesc = "" +
 	"\x19CredentialAcquisitionMode\x12+\n" +
 	"'CREDENTIAL_ACQUISITION_MODE_UNSPECIFIED\x10\x00\x12&\n" +
 	"\"CREDENTIAL_ACQUISITION_MODE_ENROLL\x10\x01\x12(\n" +
-	"$CREDENTIAL_ACQUISITION_MODE_RETRIEVE\x10\x02*\xed\x01\n" +
+	"$CREDENTIAL_ACQUISITION_MODE_RETRIEVE\x10\x02*\xcc\x01\n" +
 	"\x0eCredentialType\x12\x1f\n" +
 	"\x1bCREDENTIAL_TYPE_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14CREDENTIAL_TYPE_X509\x10\x01\x12\x17\n" +
@@ -302,8 +297,7 @@ const file_spire_api_types_credentialacquisition_proto_rawDesc = "" +
 	"\x13CREDENTIAL_TYPE_WIT\x10\x03\x12\x17\n" +
 	"\x13CREDENTIAL_TYPE_JWT\x10\x04\x12\x1b\n" +
 	"\x17CREDENTIAL_TYPE_API_KEY\x10\x05\x12\x17\n" +
-	"\x13CREDENTIAL_TYPE_PSK\x10\x06\x12\x1f\n" +
-	"\x1bCREDENTIAL_TYPE_PRIVATE_KEY\x10\aB7Z5github.com/spiffe/spire-api-sdk/proto/spire/api/typesb\x06proto3"
+	"\x13CREDENTIAL_TYPE_PSK\x10\x06B7Z5github.com/spiffe/spire-api-sdk/proto/spire/api/typesb\x06proto3"
 
 var (
 	file_spire_api_types_credentialacquisition_proto_rawDescOnce sync.Once
